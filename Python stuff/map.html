@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_67efe17f7755dd2607b637c6aa19483c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_67efe17f7755dd2607b637c6aa19483c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_67efe17f7755dd2607b637c6aa19483c = L.map(
+                "map_67efe17f7755dd2607b637c6aa19483c",
+                {
+                    center: [0, 0],
+                    crs: L.CRS.EPSG3857,
+                    maxBounds: [[-90, -180], [90, 180]],
+                    zoom: 1,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_634bb06cc10c500a7258a06dee803216 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png",
+                {"attribution": "My Data Attribution", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 2, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_67efe17f7755dd2607b637c6aa19483c);
+        
+    
+            var marker_5c835f2ca7631b53313b9e701d6c4e30 = L.marker(
+                [13.8757, 100.66738],
+                {}
+            ).addTo(map_67efe17f7755dd2607b637c6aa19483c);
+        
+    
+            var icon_8d72f537660ff25b3575f4843a3321dd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#008000", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_5c835f2ca7631b53313b9e701d6c4e30.setIcon(icon_8d72f537660ff25b3575f4843a3321dd);
+        
+    
+        var popup_db425415e885a5484ff5fd26ceb58364 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_64dd8f57240cb9950f7b46f047d45c9a = $(`<div id="html_64dd8f57240cb9950f7b46f047d45c9a" style="width: 100.0%; height: 100.0%;">ONE Friday Fights 9 </div>`)[0];
+                popup_db425415e885a5484ff5fd26ceb58364.setContent(html_64dd8f57240cb9950f7b46f047d45c9a);
+            
+        
+
+        marker_5c835f2ca7631b53313b9e701d6c4e30.bindPopup(popup_db425415e885a5484ff5fd26ceb58364)
+        ;
+
+        
+    
+    
+            var marker_9ef82c04c18d73ec2d127ad725588a85 = L.marker(
+                [1.3064, 103.87426],
+                {}
+            ).addTo(map_67efe17f7755dd2607b637c6aa19483c);
+        
+    
+            var icon_428a4437364a4c1ad4449fc79a63545e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#1b8c00", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_9ef82c04c18d73ec2d127ad725588a85.setIcon(icon_428a4437364a4c1ad4449fc79a63545e);
+        
+    
+        var popup_193a204301f33ee3b1546ac70f2e717b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2a00f75bd45c48c23adbfeac55417606 = $(`<div id="html_2a00f75bd45c48c23adbfeac55417606" style="width: 100.0%; height: 100.0%;">ONE Fight Night 8: Bhullar vs. Malykhin on Prime Video </div>`)[0];
+                popup_193a204301f33ee3b1546ac70f2e717b.setContent(html_2a00f75bd45c48c23adbfeac55417606);
+            
+        
+
+        marker_9ef82c04c18d73ec2d127ad725588a85.bindPopup(popup_193a204301f33ee3b1546ac70f2e717b)
+        ;
+
+        
+    
+    
+            var marker_e27fcc87e1be2e99a0a57df25e19f472 = L.marker(
+                [13.8757, 100.66738],
+                {}
+            ).addTo(map_67efe17f7755dd2607b637c6aa19483c);
+        
+    
+            var icon_f29b996a478918ac9d3375ea91dba361 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#72aa00", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e27fcc87e1be2e99a0a57df25e19f472.setIcon(icon_f29b996a478918ac9d3375ea91dba361);
+        
+    
+        var popup_cdf37044a7f4b8e8f9f2190fd5363b55 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_82029ca32fe58318f59210d6c6fb4dcd = $(`<div id="html_82029ca32fe58318f59210d6c6fb4dcd" style="width: 100.0%; height: 100.0%;">ONE Fight Night 9: Nong-O vs. Haggerty on Prime Video </div>`)[0];
+                popup_cdf37044a7f4b8e8f9f2190fd5363b55.setContent(html_82029ca32fe58318f59210d6c6fb4dcd);
+            
+        
+
+        marker_e27fcc87e1be2e99a0a57df25e19f472.bindPopup(popup_cdf37044a7f4b8e8f9f2190fd5363b55)
+        ;
+
+        
+    
+    
+            var marker_a694fff2c9c120e7a570ed375430abf7 = L.marker(
+                [41.23193, -80.56804],
+                {}
+            ).addTo(map_67efe17f7755dd2607b637c6aa19483c);
+        
+    
+            var icon_087104240a88a665a1cdc2631898d013 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#b4bc00", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a694fff2c9c120e7a570ed375430abf7.setIcon(icon_087104240a88a665a1cdc2631898d013);
+        
+    
+        var popup_9ada7d3a898c103b833bc28b61c48f7b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_345693ab38fb73dae9771ff9abf37239 = $(`<div id="html_345693ab38fb73dae9771ff9abf37239" style="width: 100.0%; height: 100.0%;">ONE Fight Night 10: Johnson vs. Moraes III on Prime Video </div>`)[0];
+                popup_9ada7d3a898c103b833bc28b61c48f7b.setContent(html_345693ab38fb73dae9771ff9abf37239);
+            
+        
+
+        marker_a694fff2c9c120e7a570ed375430abf7.bindPopup(popup_9ada7d3a898c103b833bc28b61c48f7b)
+        ;
+
+        
+    
+    
+            var marker_07c50c0d80df911812c9fcc49a3cf04b = L.marker(
+                [41.23193, -80.56804],
+                {}
+            ).addTo(map_67efe17f7755dd2607b637c6aa19483c);
+        
+    
+            var icon_feed56b5d3a00891c3716c4a357358a9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#cf9d00", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_07c50c0d80df911812c9fcc49a3cf04b.setIcon(icon_feed56b5d3a00891c3716c4a357358a9);
+        
+    
+        var popup_759bf29372f4cf0000a72ab67122ae6f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d6084607f5496d4e92c8f482cf4a0f66 = $(`<div id="html_d6084607f5496d4e92c8f482cf4a0f66" style="width: 100.0%; height: 100.0%;">ONE Fight Night 11 on Prime Video </div>`)[0];
+                popup_759bf29372f4cf0000a72ab67122ae6f.setContent(html_d6084607f5496d4e92c8f482cf4a0f66);
+            
+        
+
+        marker_07c50c0d80df911812c9fcc49a3cf04b.bindPopup(popup_759bf29372f4cf0000a72ab67122ae6f)
+        ;
+
+        
+    
+    
+            var marker_24eac20fadb33a97eef517d800bd3311 = L.marker(
+                [41.23193, -80.56804],
+                {}
+            ).addTo(map_67efe17f7755dd2607b637c6aa19483c);
+        
+    
+            var icon_15b4770f1938fb844c04f71e224c5d13 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#d58e00", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_24eac20fadb33a97eef517d800bd3311.setIcon(icon_15b4770f1938fb844c04f71e224c5d13);
+        
+    
+        var popup_8a21b19659b5646730cc761c9f2e8577 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5629c1cf6933ff11650a4814ab09dae8 = $(`<div id="html_5629c1cf6933ff11650a4814ab09dae8" style="width: 100.0%; height: 100.0%;">ONE Fight Night 12 on Prime Video </div>`)[0];
+                popup_8a21b19659b5646730cc761c9f2e8577.setContent(html_5629c1cf6933ff11650a4814ab09dae8);
+            
+        
+
+        marker_24eac20fadb33a97eef517d800bd3311.bindPopup(popup_8a21b19659b5646730cc761c9f2e8577)
+        ;
+
+        
+    
+    
+            var marker_d6959d8abc4886ab298301b7f8f7f15c = L.marker(
+                [41.23193, -80.56804],
+                {}
+            ).addTo(map_67efe17f7755dd2607b637c6aa19483c);
+        
+    
+            var icon_dddb12bf4d60cd80861268f1b790f4c8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#e16b00", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_d6959d8abc4886ab298301b7f8f7f15c.setIcon(icon_dddb12bf4d60cd80861268f1b790f4c8);
+        
+    
+        var popup_dd76cc0745962b2bf60f27535070e11a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cc9993e421462aee86324ec4dc9dfc30 = $(`<div id="html_cc9993e421462aee86324ec4dc9dfc30" style="width: 100.0%; height: 100.0%;">ONE Fight Night 13 on Prime Video </div>`)[0];
+                popup_dd76cc0745962b2bf60f27535070e11a.setContent(html_cc9993e421462aee86324ec4dc9dfc30);
+            
+        
+
+        marker_d6959d8abc4886ab298301b7f8f7f15c.bindPopup(popup_dd76cc0745962b2bf60f27535070e11a)
+        ;
+
+        
+    
+    
+            var marker_b61b292e64fbc79cc541dd399ea35355 = L.marker(
+                [41.23193, -80.56804],
+                {}
+            ).addTo(map_67efe17f7755dd2607b637c6aa19483c);
+        
+    
+            var icon_7bbf001e5ecfece96798094ca4b2b0cf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#e75800", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b61b292e64fbc79cc541dd399ea35355.setIcon(icon_7bbf001e5ecfece96798094ca4b2b0cf);
+        
+    
+        var popup_8b234355794b91400e38805f97e99b5e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fcedf69f01eae1ca52c00fa83a0277db = $(`<div id="html_fcedf69f01eae1ca52c00fa83a0277db" style="width: 100.0%; height: 100.0%;">ONE Fight Night 14 on Prime Video </div>`)[0];
+                popup_8b234355794b91400e38805f97e99b5e.setContent(html_fcedf69f01eae1ca52c00fa83a0277db);
+            
+        
+
+        marker_b61b292e64fbc79cc541dd399ea35355.bindPopup(popup_8b234355794b91400e38805f97e99b5e)
+        ;
+
+        
+    
+    
+            var marker_4b3a7e4635055bf3a3efbe56fa74b1a5 = L.marker(
+                [41.23193, -80.56804],
+                {}
+            ).addTo(map_67efe17f7755dd2607b637c6aa19483c);
+        
+    
+            var icon_38255049d443a2ef2a0a34aac045c713 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#f32e00", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_4b3a7e4635055bf3a3efbe56fa74b1a5.setIcon(icon_38255049d443a2ef2a0a34aac045c713);
+        
+    
+        var popup_8e19a7ab7956153df07a835097ea23c2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bd8ec40b9e71c7c7ada8325c69d3532b = $(`<div id="html_bd8ec40b9e71c7c7ada8325c69d3532b" style="width: 100.0%; height: 100.0%;">ONE Fight Night 15 on Prime Video </div>`)[0];
+                popup_8e19a7ab7956153df07a835097ea23c2.setContent(html_bd8ec40b9e71c7c7ada8325c69d3532b);
+            
+        
+
+        marker_4b3a7e4635055bf3a3efbe56fa74b1a5.bindPopup(popup_8e19a7ab7956153df07a835097ea23c2)
+        ;
+
+        
+    
+    
+            var marker_bca298f8aca54778f495d35bed770cb5 = L.marker(
+                [41.23193, -80.56804],
+                {}
+            ).addTo(map_67efe17f7755dd2607b637c6aa19483c);
+        
+    
+            var icon_343a9f1ecb0857bc110fff057b630fdf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#f91800", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_bca298f8aca54778f495d35bed770cb5.setIcon(icon_343a9f1ecb0857bc110fff057b630fdf);
+        
+    
+        var popup_822f95f7dd3fb9c05588bc8177f5fcc1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_254afb90d33133dd184cf067ebba562e = $(`<div id="html_254afb90d33133dd184cf067ebba562e" style="width: 100.0%; height: 100.0%;">ONE Fight Night 16 on Prime Video </div>`)[0];
+                popup_822f95f7dd3fb9c05588bc8177f5fcc1.setContent(html_254afb90d33133dd184cf067ebba562e);
+            
+        
+
+        marker_bca298f8aca54778f495d35bed770cb5.bindPopup(popup_822f95f7dd3fb9c05588bc8177f5fcc1)
+        ;
+
+        
+    
+    
+            var marker_a04dbf7eb42407a2aadc59c65c1ea3fa = L.marker(
+                [41.23193, -80.56804],
+                {}
+            ).addTo(map_67efe17f7755dd2607b637c6aa19483c);
+        
+    
+            var icon_b6c25bd97b48ce9dcd202a2c3c8fdc26 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#ff0000", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a04dbf7eb42407a2aadc59c65c1ea3fa.setIcon(icon_b6c25bd97b48ce9dcd202a2c3c8fdc26);
+        
+    
+        var popup_8dc006ba276cd8fdb4f8998f1f5344ac = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_af82b30ce0dc3f963534a84943055308 = $(`<div id="html_af82b30ce0dc3f963534a84943055308" style="width: 100.0%; height: 100.0%;">ONE Fight Night 17 on Prime Video </div>`)[0];
+                popup_8dc006ba276cd8fdb4f8998f1f5344ac.setContent(html_af82b30ce0dc3f963534a84943055308);
+            
+        
+
+        marker_a04dbf7eb42407a2aadc59c65c1ea3fa.bindPopup(popup_8dc006ba276cd8fdb4f8998f1f5344ac)
+        ;
+
+        
+    
+    
+            var marker_e472587648dc2c29fb67a990b820a779 = L.marker(
+                [33.45573, -117.10398],
+                {}
+            ).addTo(map_67efe17f7755dd2607b637c6aa19483c);
+        
+    
+            var icon_b20b6e5794d9874331d4512cbb74f12d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#3a9800", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e472587648dc2c29fb67a990b820a779.setIcon(icon_b20b6e5794d9874331d4512cbb74f12d);
+        
+    
+        var popup_e4a4ae5752d57c25fd8111ccb9cdc21d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fc272a6175201bae6cf5ebfec6c7fe69 = $(`<div id="html_fc272a6175201bae6cf5ebfec6c7fe69" style="width: 100.0%; height: 100.0%;">Bellator 293</div>`)[0];
+                popup_e4a4ae5752d57c25fd8111ccb9cdc21d.setContent(html_fc272a6175201bae6cf5ebfec6c7fe69);
+            
+        
+
+        marker_e472587648dc2c29fb67a990b820a779.bindPopup(popup_e4a4ae5752d57c25fd8111ccb9cdc21d)
+        ;
+
+        
+    
+    
+            var marker_2cbc304b7c16bb464c90ca12a06be7aa = L.marker(
+                [21.4942, -158.02261],
+                {}
+            ).addTo(map_67efe17f7755dd2607b637c6aa19483c);
+        
+    
+            var icon_4b769dfbdbf378358eaf05646568acc3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#72aa00", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_2cbc304b7c16bb464c90ca12a06be7aa.setIcon(icon_4b769dfbdbf378358eaf05646568acc3);
+        
+    
+        var popup_0b5aa480f86289d1ba5bae4708bff6dc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a288aee473acefcb2ff098de4285e55e = $(`<div id="html_a288aee473acefcb2ff098de4285e55e" style="width: 100.0%; height: 100.0%;">Bellator 294</div>`)[0];
+                popup_0b5aa480f86289d1ba5bae4708bff6dc.setContent(html_a288aee473acefcb2ff098de4285e55e);
+            
+        
+
+        marker_2cbc304b7c16bb464c90ca12a06be7aa.bindPopup(popup_0b5aa480f86289d1ba5bae4708bff6dc)
+        ;
+
+        
+    
+    
+            var marker_378788531da6e3334af521e75e824b40 = L.marker(
+                [21.4942, -158.02261],
+                {}
+            ).addTo(map_67efe17f7755dd2607b637c6aa19483c);
+        
+    
+            var icon_a11b8d83a3e5de08c979d8b7bb1a2f2d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#86b000", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_378788531da6e3334af521e75e824b40.setIcon(icon_a11b8d83a3e5de08c979d8b7bb1a2f2d);
+        
+    
+        var popup_4c1e5c22d1cfaa17027f4a2e82d576c0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ef180ba4994bf491a6b4a5ba0d3ec5ac = $(`<div id="html_ef180ba4994bf491a6b4a5ba0d3ec5ac" style="width: 100.0%; height: 100.0%;">Bellator 295</div>`)[0];
+                popup_4c1e5c22d1cfaa17027f4a2e82d576c0.setContent(html_ef180ba4994bf491a6b4a5ba0d3ec5ac);
+            
+        
+
+        marker_378788531da6e3334af521e75e824b40.bindPopup(popup_4c1e5c22d1cfaa17027f4a2e82d576c0)
+        ;
+
+        
+    
+    
+            var marker_6401f582426946ea9ffae0570844182a = L.marker(
+                [48.85689, 2.35085],
+                {}
+            ).addTo(map_67efe17f7755dd2607b637c6aa19483c);
+        
+    
+            var icon_792b07d342be9da00c99e83033abae9a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#c9ac00", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_6401f582426946ea9ffae0570844182a.setIcon(icon_792b07d342be9da00c99e83033abae9a);
+        
+    
+        var popup_3139fc74bfd28b00d037f6e323b54834 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4f90b800190a2b96ee6d5ac736926a65 = $(`<div id="html_4f90b800190a2b96ee6d5ac736926a65" style="width: 100.0%; height: 100.0%;">Bellator 296</div>`)[0];
+                popup_3139fc74bfd28b00d037f6e323b54834.setContent(html_4f90b800190a2b96ee6d5ac736926a65);
+            
+        
+
+        marker_6401f582426946ea9ffae0570844182a.bindPopup(popup_3139fc74bfd28b00d037f6e323b54834)
+        ;
+
+        
+    
+    
+            var marker_ce3e9cd31c8d59507e8fd7339438a7f1 = L.marker(
+                [53.27378, -6.20769],
+                {}
+            ).addTo(map_67efe17f7755dd2607b637c6aa19483c);
+        
+    
+            var icon_c714d3bb5188346348807ad84cc33665 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#ed4400", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_ce3e9cd31c8d59507e8fd7339438a7f1.setIcon(icon_c714d3bb5188346348807ad84cc33665);
+        
+    
+        var popup_adc497e727fb57de6a10a441fe987949 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_02d11c0cf3ea840a6f4da4b29440c939 = $(`<div id="html_02d11c0cf3ea840a6f4da4b29440c939" style="width: 100.0%; height: 100.0%;">Bellator Dublin</div>`)[0];
+                popup_adc497e727fb57de6a10a441fe987949.setContent(html_02d11c0cf3ea840a6f4da4b29440c939);
+            
+        
+
+        marker_ce3e9cd31c8d59507e8fd7339438a7f1.bindPopup(popup_adc497e727fb57de6a10a441fe987949)
+        ;
+
+        
+    
+    
+            var marker_7ed9191fedd86fa922da13a94fb22ac2 = L.marker(
+                [51.50015, -0.12624],
+                {}
+            ).addTo(map_67efe17f7755dd2607b637c6aa19483c);
+        
+    
+            var icon_876edd7e6c2bbd296778608c290f8d12 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#0d8600", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_7ed9191fedd86fa922da13a94fb22ac2.setIcon(icon_876edd7e6c2bbd296778608c290f8d12);
+        
+    
+        var popup_bdb7ffafaabb87b30586011de04bc08a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3effa3d503da199dcd05cb19d81d5d6c = $(`<div id="html_3effa3d503da199dcd05cb19d81d5d6c" style="width: 100.0%; height: 100.0%;">UFC Edwards vs Usman 3</div>`)[0];
+                popup_bdb7ffafaabb87b30586011de04bc08a.setContent(html_3effa3d503da199dcd05cb19d81d5d6c);
+            
+        
+
+        marker_7ed9191fedd86fa922da13a94fb22ac2.bindPopup(popup_bdb7ffafaabb87b30586011de04bc08a)
+        ;
+
+        
+    
+    
+            var marker_70418084a0e3b2a6c562b1dcf92f9686 = L.marker(
+                [29.43347, -98.43377],
+                {}
+            ).addTo(map_67efe17f7755dd2607b637c6aa19483c);
+        
+    
+            var icon_302328f949e1e82a7c1b291aa85ad9d6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#2a9200", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_70418084a0e3b2a6c562b1dcf92f9686.setIcon(icon_302328f949e1e82a7c1b291aa85ad9d6);
+        
+    
+        var popup_4bdb10ca149faea141db22a937dd626c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_20183146545f047f5b4081f5e4dc8da3 = $(`<div id="html_20183146545f047f5b4081f5e4dc8da3" style="width: 100.0%; height: 100.0%;">UFC Vera vs Sandhagen</div>`)[0];
+                popup_4bdb10ca149faea141db22a937dd626c.setContent(html_20183146545f047f5b4081f5e4dc8da3);
+            
+        
+
+        marker_70418084a0e3b2a6c562b1dcf92f9686.bindPopup(popup_4bdb10ca149faea141db22a937dd626c)
+        ;
+
+        
+    
+    
+            var marker_feef2e478e6ebd6bd4d81724aa3b67c8 = L.marker(
+                [25.77796, -80.19529],
+                {}
+            ).addTo(map_67efe17f7755dd2607b637c6aa19483c);
+        
+    
+            var icon_a838a1fd1ad8f36a89128e6b09d22303 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#4b9e00", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_feef2e478e6ebd6bd4d81724aa3b67c8.setIcon(icon_a838a1fd1ad8f36a89128e6b09d22303);
+        
+    
+        var popup_250f1c7b7b2723c9caf0db33b196917c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0282936dc9d114ee4536bbde824a3634 = $(`<div id="html_0282936dc9d114ee4536bbde824a3634" style="width: 100.0%; height: 100.0%;">UFC Pereira vs Adesanya 2</div>`)[0];
+                popup_250f1c7b7b2723c9caf0db33b196917c.setContent(html_0282936dc9d114ee4536bbde824a3634);
+            
+        
+
+        marker_feef2e478e6ebd6bd4d81724aa3b67c8.bindPopup(popup_250f1c7b7b2723c9caf0db33b196917c)
+        ;
+
+        
+    
+    
+            var marker_b7cdfff9951bbd786a1c102b79c65c03 = L.marker(
+                [38.47931, -99.88163],
+                {}
+            ).addTo(map_67efe17f7755dd2607b637c6aa19483c);
+        
+    
+            var icon_4c28999d0f396c39927326697c01d2fa = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#5ea400", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b7cdfff9951bbd786a1c102b79c65c03.setIcon(icon_4c28999d0f396c39927326697c01d2fa);
+        
+    
+        var popup_3e51eadf23acba6284b56aac72b8073a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_100e3addbe9eee59c44eb3d1dcfbc477 = $(`<div id="html_100e3addbe9eee59c44eb3d1dcfbc477" style="width: 100.0%; height: 100.0%;">UFC Holloway vs Allen</div>`)[0];
+                popup_3e51eadf23acba6284b56aac72b8073a.setContent(html_100e3addbe9eee59c44eb3d1dcfbc477);
+            
+        
+
+        marker_b7cdfff9951bbd786a1c102b79c65c03.bindPopup(popup_3e51eadf23acba6284b56aac72b8073a)
+        ;
+
+        
+    
+    
+            var marker_04f07570a5c3d1ee99b16c5aed899f9f = L.marker(
+                [36.16909, -115.14058],
+                {}
+            ).addTo(map_67efe17f7755dd2607b637c6aa19483c);
+        
+    
+            var icon_e9dcba6f0a12ddcf5e48b4d0368e7e83 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#9cb600", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_04f07570a5c3d1ee99b16c5aed899f9f.setIcon(icon_e9dcba6f0a12ddcf5e48b4d0368e7e83);
+        
+    
+        var popup_68d26800674c2577e4a0f9c220bee641 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1498e8dfbdd271ff561907ee2b1c778a = $(`<div id="html_1498e8dfbdd271ff561907ee2b1c778a" style="width: 100.0%; height: 100.0%;">UFC Pavlovich vs Blaydes</div>`)[0];
+                popup_68d26800674c2577e4a0f9c220bee641.setContent(html_1498e8dfbdd271ff561907ee2b1c778a);
+            
+        
+
+        marker_04f07570a5c3d1ee99b16c5aed899f9f.bindPopup(popup_68d26800674c2577e4a0f9c220bee641)
+        ;
+
+        
+    
+    
+            var marker_6f92f02aec5c564def1c002df06ec352 = L.marker(
+                [42.34615, -71.07996],
+                {}
+            ).addTo(map_67efe17f7755dd2607b637c6aa19483c);
+        
+    
+            var icon_17c33f84831ee7259f7eeba238777149 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#c3b900", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_6f92f02aec5c564def1c002df06ec352.setIcon(icon_17c33f84831ee7259f7eeba238777149);
+        
+    
+        var popup_a841a59bd3e24baca2b39becd9faca1d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7f430a92c09372157d23d9307a18620b = $(`<div id="html_7f430a92c09372157d23d9307a18620b" style="width: 100.0%; height: 100.0%;">UFC Sterling vs Cejudo</div>`)[0];
+                popup_a841a59bd3e24baca2b39becd9faca1d.setContent(html_7f430a92c09372157d23d9307a18620b);
+            
+        
+
+        marker_6f92f02aec5c564def1c002df06ec352.bindPopup(popup_a841a59bd3e24baca2b39becd9faca1d)
+        ;
+
+        
+    
+    
+            var marker_00560692ab70bf0201233dd9feec582d = L.marker(
+                [36.16909, -115.14058],
+                {}
+            ).addTo(map_67efe17f7755dd2607b637c6aa19483c);
+        
+    
+            var icon_f178eca0ac9b2247b02141354207ea7b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#db7d00", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_00560692ab70bf0201233dd9feec582d.setIcon(icon_f178eca0ac9b2247b02141354207ea7b);
+        
+    
+        var popup_d49463e4b7e2329290c4f147e6dedc33 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_efab36ad6fe689dab95007e7b895b97b = $(`<div id="html_efab36ad6fe689dab95007e7b895b97b" style="width: 100.0%; height: 100.0%;">UFC TBD vs TBD</div>`)[0];
+                popup_d49463e4b7e2329290c4f147e6dedc33.setContent(html_efab36ad6fe689dab95007e7b895b97b);
+            
+        
+
+        marker_00560692ab70bf0201233dd9feec582d.bindPopup(popup_d49463e4b7e2329290c4f147e6dedc33)
+        ;
+
+        
+    
+</script>
+</html>

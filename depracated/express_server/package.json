@@ -1,0 +1,12 @@
+{
+  "name": "postgres",
+  "version": "15.2",
+  "description": "receive data for front end react ",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "pg": "^8.9.0"
+  }
+}

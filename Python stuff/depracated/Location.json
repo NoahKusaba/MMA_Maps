@@ -1,0 +1,24 @@
+[
+    {"Event":"UFC 284",
+    "Sport":"MMA",
+    "City":"Perth",
+    "Country":"Australia",
+    "Venue":"RAC Arena",
+    "Date":"02/12/2023"
+    },
+    {"Event":"UFC 285",
+    "Sport":"MMA",
+    "City":"Paradise",
+    "Country":"United States",
+    "Venue":"T-Mobile Arena",
+    "Date":"03/04/2023"
+    },
+    {"Event":"UFC 286",
+    "Sport":"MMA",
+    "City":"London",
+    "Country":"England",
+    "Venue":"The O2 Arena",
+    "Date":"03/18/2023"
+    }
+    ]
+
