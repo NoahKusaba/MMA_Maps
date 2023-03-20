@@ -20,6 +20,7 @@ total_events_sorted = sorted(total_events_color, key = lambda event:event["Date"
 commit_database(total_events_sorted)
 
 
+# Folium map for those interested 
 # import folium 
 # import webbrowser
 
