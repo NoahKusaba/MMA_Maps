@@ -1,8 +1,8 @@
 import psycopg2
-from settings import db_name, password, user 
+from settings import db_name, password, user, hostname
 
 def commit_database(events, sport = 'MMA'):
-    conn = psycopg2.connect(dbname = db_name, user = user, password = password, host='localhost', port= '5432')
+    conn = psycopg2.connect(dbname = db_name, user = user, password = password, host=hostname, port= '5432')
     cursor = conn.cursor()
 
     cursor.execute(f"drop table if exists {sport}")

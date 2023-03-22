@@ -1,5 +1,4 @@
 from colour import Color 
-import datetime
 
 def marker_color(events):
     list_dates = sorted(list(set([x["Date"] for x in events]))) # small to large

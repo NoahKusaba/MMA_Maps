@@ -14,10 +14,8 @@ def mma_data():
     cursor = conn.cursor()
     cursor.execute('select * from mma;')
     events_data= cursor.fetchall()
-
     parse_data = [Events(event = _event[1], headline= _event[2],venue = _event[3], date =_event[6] , latitude= _event[7], longitude = _event[8], color = _event[9], url =_event[10], org =_event[11]) for _event in events_data]
     events_dict = [event_.__dict__ for event_ in parse_data]
-
     return events_dict
 
 
