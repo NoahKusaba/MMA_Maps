@@ -9,9 +9,9 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app) 
 
-@app.route('/<type> ')
+@app.route('/mma')
 
-def mma_data(type):
+def mma_data():
     accepted_events = ["mma", "boxing"]
 
     conn = psycopg2.connect(dbname = db_name, user = user, password = password, host = host)
