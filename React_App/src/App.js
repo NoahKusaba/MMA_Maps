@@ -12,7 +12,7 @@ function App()   {
     }, []);
 
     function get_db() {
-        fetch('http://localhost:5000/mma')
+        fetch('https://fighting-events-api.onrender.com/mma')
             .then(response => { 
                 console.log(response)
                 return response.text();
