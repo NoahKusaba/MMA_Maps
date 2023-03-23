@@ -27,7 +27,7 @@ def mma_data(type):
     return events_dict
 
 
-app.run()   
+app.run(host = "0.0.0.0")   
 
 
     # if type.find("-") != -1:
