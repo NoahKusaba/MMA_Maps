@@ -19,6 +19,6 @@ def mma_data():
     return events_dict
 
 
-app.run()   
+app.run(host = 0.0.0.0)   
 
 
