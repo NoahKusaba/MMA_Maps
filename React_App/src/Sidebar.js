@@ -6,11 +6,12 @@ function Sidebar({event_data}) {
       {event_data ? event_data.map((event,idx) =>{
         return(
           <div className  ="sidebar_row"  key ={idx}>
-            <img alt="org" className={event.org}/>
-            <div className="event">
+
+              <a href ={event.url} className="imageCont"> <img alt="org" className={event.org}/> </a>
+            <a href= {event.url} className="event">
               {event.headline} <br/> 
               {event.date.split(" ")[0]}
-            </div> 
+            </a> 
           </div>
         )
       }): "unavailable"}

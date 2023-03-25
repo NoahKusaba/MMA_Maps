@@ -6,14 +6,7 @@ function Map({event_data}) {
 
   return (
     <div id="locations_map">
-      <div id="header">
-        {/* <form>
-          <input type="radio" name="event_type" value="MMA" id ="mma_tag" onChange={setType(true)}/>
-            <label for="mma_tag">Mixed-Martial-Arts</label><br/>
-          <input type="radio" name="event_type" value="test" id ="test_tag" onChange={setType(true)}/>
-            <label for="test_tag">Test_Option</label><br/>
-        </form> */}
-      </div>
+  
       <MapContainer 
           center={[0,0]} 
           zoom={2} 

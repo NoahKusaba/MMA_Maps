@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import datetime
-
+type = "mma"
 def scrape_bellator_events():
     response = requests.get("https://www.bellator.com/event")
 
@@ -28,7 +28,7 @@ def scrape_bellator_events():
             city = elements[3].string.split(", ")[0]
             country = elements[3].string.split(", ")[1]
 
-            list_events.append({"Event":event_Name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object,"URL":url,"Org":"Bellator"})
+            list_events.append({"Event":event_Name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object,"URL":url,"Org":"Bellator", "Type":type})
        
         return list_events
 
@@ -65,7 +65,7 @@ def scrape_ufc_events():
                 country = fight_card.find(class_="country").string
                 url = "https://www.ufc.com" + str(fight_card.find(class_="c-card-event--result__headline").find("a")["href"])
 
-                list_events.append({"Event":event_Name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object,"URL":url,"Org":"UFC"})
+                list_events.append({"Event":event_Name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object,"URL":url,"Org":"UFC", "Type":type})
 
         return list_events
 
@@ -109,7 +109,7 @@ def scrape_one_events():
                 city = elements.find(class_="event-location").string.split(", ")[1]
             except AttributeError:
                 pass
-            list_events.append({"Event":event_Name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object,"URL":url,"Org":"ONE"})
+            list_events.append({"Event":event_Name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object,"URL":url,"Org":"ONE", "Type":type})
 
         return list_events
     

@@ -1,5 +1,5 @@
 import requests
-
+from settings import CordKey
 
 #TOMTOM Geocode APi
 def returnCoordinate(name):
@@ -12,7 +12,7 @@ def returnCoordinate(name):
         else:
             url ="https://api.tomtom.com/search/2/geocode/"
             #url = "https://api.radar.io/v1/search/autocomplete?query=" failed radar api
-            url+= event["Venue"] +", "+event["City"]+ ", " + event["Country"] +".json" +"?key=gxdiIto3PoWZ5MzWrlBZGC4zSVRdlIOW"
+            url+= event["Venue"] +", "+event["City"]+ ", " + event["Country"] +".json" +f"?key={CordKey}"
 
             response = requests.get(url)
         

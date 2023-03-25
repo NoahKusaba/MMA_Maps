@@ -1,11 +1,9 @@
 from colour import Color 
 
 def marker_color(events):
-    list_dates = sorted(list(set([x["Date"] for x in events]))) # small to large
-    orange= Color("green")
-    colors = list(orange.range_to(Color("red"),len(list_dates)))
-    date_colors = {list_dates[x]:colors[x] for x in range(len(list_dates))}
-    for event in events:
-        event.update({"Color":date_colors[event["Date"]]})
-    
+    startColor= Color("green")
+    colors = list(startColor.range_to(Color("red"),len(events)))
+
+    for idx,event in enumerate(events):
+        event.update({"Color":colors[idx]})
     return events
