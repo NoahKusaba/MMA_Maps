@@ -3,7 +3,7 @@ from coordinate import *
 from color_gradient import *
 import folium 
 import webbrowser
-from scraper import scrape_bellator_events, scrape_ufc_events, scrape_one_events
+from Event_Scraper_CRONJOB.mma_scraper import scrape_bellator_events, scrape_ufc_events, scrape_one_events
 
 location_bellator = scrape_bellator_events()
 location_ufc = scrape_ufc_events()

@@ -1,17 +1,16 @@
 from flask import Flask
 import psycopg2
 from settings import db_name, password, user,host
-from events import Events
+from api.models.events import Events
 #enable cors for all use cases, probably temporary
 from flask_cors import CORS
-
 
 app = Flask(__name__)
 CORS(app) 
 
 @app.route('/')
 def home():
-    return "Accepted Events:", ["mma", "boxing"]
+    return 'Accepted Events:, ["mma", "boxing"]'
 
 @app.route('/<type>')
 def mma_data(type):
@@ -40,12 +39,3 @@ def mma_data(type):
     parse_data = [Events(event = _event[1], headline= _event[2],venue = _event[3], date =_event[6] , latitude= _event[7], longitude = _event[8], color = _event[9], url =_event[10], org =_event[11]) for _event in events_data]
     events_dict = [event_.__dict__ for event_ in parse_data]
     return events_dict
-
-app.run(host = "0.0.0.0")   
-
-
-
-
-
-
-    

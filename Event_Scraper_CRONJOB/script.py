@@ -1,7 +1,7 @@
 from coordinate import *
 from color_gradient import *
 from commit_database import * 
-from scraper import scrape_bellator_events, scrape_ufc_events, scrape_one_events
+from mma_scraper import scrape_bellator_events, scrape_ufc_events, scrape_one_events
 
 location_bellator = scrape_bellator_events()
 location_ufc = scrape_ufc_events()
