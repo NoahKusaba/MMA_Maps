@@ -1,0 +1,1 @@
+from scrapers.mma_scraper import scrape_bellator_events, scrape_ufc_events, scrape_one_events

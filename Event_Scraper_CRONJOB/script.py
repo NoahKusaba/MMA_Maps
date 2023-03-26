@@ -1,7 +1,6 @@
-from coordinate import *
-from color_gradient import *
+from transformations import marker_color, returnCoordinate
 from commit_database import * 
-from mma_scraper import scrape_bellator_events, scrape_ufc_events, scrape_one_events
+from scrapers import scrape_bellator_events, scrape_ufc_events, scrape_one_events
 
 location_bellator = scrape_bellator_events()
 location_ufc = scrape_ufc_events()
@@ -19,8 +18,6 @@ total_events_color = marker_color(total_events_sorted)
 
 commit_database(total_events_color)
 
-
-
 # Folium map for those interested 
 # import folium 
 # import webbrowser
@@ -32,5 +29,3 @@ commit_database(total_events_color)
 # output_file = "map.html"
 # map.save(output_file)
 # webbrowser.open(output_file)
-
-
