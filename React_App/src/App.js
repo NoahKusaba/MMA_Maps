@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from "react";
 import Map from './Map';
 import Sidebar from './Sidebar';
-import './index.css';
+import './app.css';
 
 function App()   {
   const [event_data, setEvents] = useState(false);
   const [event_types,setTypes] = useState(['mma']);
-
+  const total_types = ["mma", "boxing"]
 
   const handleChange = (data) =>{
     if (!event_types.includes(data)){
@@ -41,8 +41,16 @@ function App()   {
       <Sidebar event_data = {event_data}/>
       <Map event_data = {event_data} />
       <div id="header">
-        <input type="checkbox" value ="mma" checked={event_types.includes("mma")} onChange={() => handleChange("mma")} /> MMA
-        <input type="checkbox" value="boxing" onChange={() =>handleChange("boxing")}/> Boxing
+        {total_types.map((event_name,idx) => {
+          return(
+            <div className = "checkbox" key={idx}>
+              {event_name}
+              <input type="checkbox" value ={event_name} checked={event_types.includes(event_name)} onChange={() => handleChange(event_name)} /> 
+            </div>
+          )
+          
+        })}
+
       </div>
   </div>
   )
