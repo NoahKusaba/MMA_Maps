@@ -1,6 +1,6 @@
 from transformations import marker_color, returnCoordinate
 from commit_database import * 
-from scrapers import scrape_bellator_events, scrape_ufc_events, scrape_one_events, scrape_wbc_events, scrape_wba_events
+from scrapers import scrape_bellator_events, scrape_ufc_events, scrape_one_events, scrape_wbc_events, scrape_wba_events, scrape_ibf_events
 
 #mma
 # location_bellator = scrape_bellator_events()
@@ -9,7 +9,8 @@ from scrapers import scrape_bellator_events, scrape_ufc_events, scrape_one_event
 
 #boxing
 # location_wbc = scrape_wbc_events()
-location_wba = scrape_wba_events()
+# location_wba = scrape_wba_events()
+location_ibj = scrape_ibf_events()
 
 bellator_location_cord = returnCoordinate(location_bellator)
 ufc_location_cord = returnCoordinate(location_ufc)

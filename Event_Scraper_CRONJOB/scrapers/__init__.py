@@ -1,2 +1,2 @@
 from scrapers.mma_scraper import scrape_bellator_events, scrape_ufc_events, scrape_one_events
-from scrapers.boxing_scraper import scrape_wbc_events, scrape_wba_events
+from scrapers.boxing_scraper import scrape_wbc_events, scrape_wba_events, scrape_ibf_events
