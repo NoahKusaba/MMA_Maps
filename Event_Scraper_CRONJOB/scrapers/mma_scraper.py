@@ -78,14 +78,15 @@ def scrape_one_events():
             event_name = elements.find(class_="title use-letter-spacing-hint").string[1:]
             country = ""
             headline =""
+            venue =""
+            city =""
             try:
                 headline = event_soup.find(class_="versus").string[1:-1]
                 venue = elements.find(class_="event-location").string.split(", ")[0]
                 city = elements.find(class_="event-location").string.split(", ")[1]
+                list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object,"URL":url,"Org":"ONE", "Type":type})
             except AttributeError:
                 pass
-            list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object,"URL":url,"Org":"ONE", "Type":type})
-
         else:
             pass
 

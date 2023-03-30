@@ -12,7 +12,7 @@ function Map({event_data}) {
           zoom={2} 
           scrollWheelZoom={true} 
           noWrap = {true}
-          maxZoom={2}
+
           maxNativeZoom={2}
           maxBounds ={[[-90,-180],   [90,180]] }
           maxBoundsViscosity = {true}>
