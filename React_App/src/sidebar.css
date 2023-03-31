@@ -48,3 +48,16 @@ img{
 .Bellator{
     content:url("./images/bellator.jpg")
 }
+
+.IBF{
+    content:url("./images/ibf.jpeg")
+}
+.WBO{
+    content:url("./images/wbo.jpeg")
+}
+.WBC{
+    content:url("./images/wbc.jpg")
+}
+.WBA{
+    content:url("./images/wba.jpg")
+}
