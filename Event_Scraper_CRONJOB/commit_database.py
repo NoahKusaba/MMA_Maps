@@ -4,7 +4,6 @@ from settings import db_name, password, user, hostname
 def commit_database(events,table = "events"):
     conn = psycopg2.connect(dbname = db_name, user = user, password = password, host=hostname, port= '5432')
     cursor = conn.cursor()
-
     cursor.execute(f"drop table if exists {table};")
     conn.commit()
     cursor.execute(f"drop index if exists event_type")
@@ -32,7 +31,6 @@ def commit_database(events,table = "events"):
             cursor.execute(f"""insert into {table} (Event, Headline, Venue, City, Country, Date, Latitude, Longitude, Color, URL, Org, Type) Values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s)
             """,(event["Event"],event["Headline"],event["Venue"],event["City"],event["Country"],event["Date"],event["Coordinates"][0],event["Coordinates"][1],str(event["Color"]),event["URL"],event["Org"],event["Type"]))
             conn.commit()
-            
         except KeyError:
             breakpoint()
             pass

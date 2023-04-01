@@ -58,5 +58,4 @@ def scrape_adcc_events():
             list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object,"URL":url,"Org":org, "Type":type})
         else:
             pass
-    breakpoint()
     return list_events

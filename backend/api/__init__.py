@@ -4,18 +4,18 @@ from settings import db_name, password, user,host
 from api.models import Events
 #enable cors for all use cases, probably temporary
 from flask_cors import CORS
-
+accepted_events = ["mma", "boxing","judo","bjj"]
 def create_api():
     app = Flask(__name__)
     CORS(app) 
 
     @app.route('/')
     def home():
-        return 'Accepted Events:, ["mma", "boxing"]'
+        return f'Accepted Events:, {accepted_events}'
 
     @app.route('/<type>')
     def mma_data(type):
-        accepted_events = ["mma", "boxing"]
+        
         insertType = ""
         
         if type.find("-") != -1:

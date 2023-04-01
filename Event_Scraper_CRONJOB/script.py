@@ -2,36 +2,48 @@ from transformations import marker_color, returnCoordinate
 from commit_database import * 
 from scrapers import *
 
-#mma
-# location_one = scrape_one_events()
-# location_bellator = scrape_bellator_events()
-# location_ufc = scrape_ufc_events()
-
-
-# one_location_cord = returnCoordinate(location_one)
-# bellator_location_cord = returnCoordinate(location_bellator)
-# ufc_location_cord = returnCoordinate(location_ufc)
-
-
-#boxing
-# location_wbc = scrape_wbc_events()
-# location_wba = scrape_wba_events()
-# location_ibf = scrape_ibf_events()
-# location_wbo = scrape_wbo_events()
-
-# wbc_location_cord = returnCoordinate(location_wbc)
-# wba_location_cord = returnCoordinate(location_wba)
-# ibf_location_cord = returnCoordinate(location_ibf)
-# wbo_location_cord = returnCoordinate(location_wbo)
-
 #bjj
-# location_ibjjf = scrape_ibjjf_events()
-# location_adcc = scrape_adcc_events()
+location_ibjjf = scrape_ibjjf_events()
+location_adcc = scrape_adcc_events()
+
+ibjjf_location_cord = returnCoordinate(location_ibjjf)
+adcc_location_cord = returnCoordinate(location_adcc)
 
 #judo
 location_usajudo_events =scrape_usajudo_events()
+judo_location_cord = returnCoordinate(location_usajudo_events)
 
-#muay thai
+# mma
+location_one = scrape_one_events()
+location_bellator = scrape_bellator_events()
+location_ufc = scrape_ufc_events()
+
+one_location_cord = returnCoordinate(location_one)
+bellator_location_cord = returnCoordinate(location_bellator)
+ufc_location_cord = returnCoordinate(location_ufc)
+
+#boxing
+location_wbc = scrape_wbc_events()
+location_wba = scrape_wba_events()
+location_ibf = scrape_ibf_events()
+location_wbo = scrape_wbo_events()
+
+wbc_location_cord = returnCoordinate(location_wbc)
+wba_location_cord = returnCoordinate(location_wba)
+ibf_location_cord = returnCoordinate(location_ibf)
+wbo_location_cord = returnCoordinate(location_wbo)
+
+total_ufc = one_location_cord  + bellator_location_cord + ufc_location_cord 
+total_boxing = wbc_location_cord +wba_location_cord +ibf_location_cord + wbo_location_cord
+total_bjj = ibjjf_location_cord + adcc_location_cord
+total_judo = judo_location_cord
+total_events = total_bjj + total_judo + total_ufc + total_boxing 
+total_events_sorted = sorted(total_events, key = lambda event:event["Date"])
+total_events_color = marker_color(total_events_sorted)
+
+commit_database(total_events_color)
+
+#muay thai, Broken
 # location_tf = scrape_tf_events()
 # location_mmt = scrape_mmt_events()
 # location_lf = scrape_lf_events()
@@ -39,14 +51,6 @@ location_usajudo_events =scrape_usajudo_events()
 # tf_location_cord = returnCoordinate(location_tf)
 # mmt_location_cord = returnCoordinate(location_mmt)
 # lf_location_cord = returnCoordinate(location_lf)
-
-total_ufc = one_location_cord  + bellator_location_cord + ufc_location_cord 
-total_boxing = wbc_location_cord +wba_location_cord +ibf_location_cord + wbo_location_cord
-total_events = total_ufc + total_boxing
-total_events_sorted = sorted(total_events, key = lambda event:event["Date"])
-total_events_color = marker_color(total_events_sorted)
-
-commit_database(total_events_color)
 
 # Folium map for those interested 
 # import folium 

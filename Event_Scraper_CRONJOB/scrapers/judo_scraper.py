@@ -46,5 +46,4 @@ def scrape_usajudo_events():
             else:
                 pass
 
-    breakpoint()
     return list_events

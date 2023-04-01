@@ -6,7 +6,7 @@ import './app.css';
 function App()   {
   const [event_data, setEvents] = useState(false);
   const [event_types,setTypes] = useState(['mma']);
-  const total_types = ["mma", "boxing"]
+  const total_types = ["mma", "boxing","judo","bjj"]
 
   const handleChange = (data) =>{
     if (!event_types.includes(data)){
