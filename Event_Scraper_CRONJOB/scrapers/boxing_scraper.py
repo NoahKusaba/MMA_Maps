@@ -1,4 +1,3 @@
-from bs4 import BeautifulSoup
 import datetime
 from scrapers.models import handle_URL, valid_date
 from selenium import webdriver
@@ -38,6 +37,7 @@ def scrape_wba_events():
     soup = handle_URL("https://www.wbaboxing.com/schedule-of-wba-title-fights","WBA")
     fight_cards = soup.find_all(class_="table-borderless")
     list_events = []
+    url = "https://www.wbaboxing.com/schedule-of-wba-title-fights"
     for fight_card in fight_cards:
         date = fight_card.find(class_="custom-widget-header").find("h4").find_all("br")[-1].string.split("-")[0].strip()
         date_object = datetime.datetime.strptime(date, "%B %d, %Y")
@@ -56,7 +56,7 @@ def scrape_wba_events():
                 city = ""
                 country =location
             org = "WBA"
-            url = "https://www.wbaboxing.com/schedule-of-wba-title-fights"
+            
             list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object,"URL":url,"Org":org, "Type":type})
         else:
             pass
@@ -88,7 +88,7 @@ def scrape_ibf_events():
                 venue = ""
             else:
                 location = fight_card.find_element(By.XPATH,".//div/p").text.split("\n")
-
+                
                 country = location[1]
                 city = ""
                 venue = ""
