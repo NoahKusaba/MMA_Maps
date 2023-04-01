@@ -16,11 +16,19 @@ def scrape_usajudo_events():
             date_total = fight_card.find(class_="event-date-cell").p.string.split(", ")
 
             if " - " in date_total[0]:
+                # case more than 1 day event 
                 date = date_total[0].split(" - ")[0] + " " + date_total[-1]
                 date_object = datetime.datetime.strptime(date,"%B %d %Y")
-                end_date = date_total[0].split(" - ")[-1] +" "+ date_total[-1]
-                end_date_object = datetime.datetime.strptime(end_date,"%B %d %Y")
+
+                # case (March 31 - April 02) vs (March 27 - 28) 
+                if len(date_total[0].split(" - ")[1].split(" ")) == 2:
+                    end_date = date_total[0].split(" - ")[1]+" "+ date_total[-1]
+                    end_date_object = datetime.datetime.strptime(end_date,"%B %d %Y")
+                else:
+                    end_date = date_total[0].split(" - ")[0].split(" ")[0] +" "+ date_total[0].split(" - ")[1] + " " +date_total[-1]
+                    end_date_object = datetime.datetime.strptime(end_date,"%B %d %Y")
             else:
+                # Case 1 day event. 
                 date = date_total[0] +" "+date_total[-1]
                 date_object = datetime.datetime.strptime(date,"%B %d %Y")
                 end_date = 0
