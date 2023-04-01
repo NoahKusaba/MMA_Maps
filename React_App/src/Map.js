@@ -8,16 +8,16 @@ function Map({event_data}) {
     <div id="locations_map">
   
       <MapContainer 
-          center={[0,0]} 
-          zoom={2} 
+          center={[0,0]}
+          zoom={1.5}
           scrollWheelZoom={true} 
           noWrap = {true}
-
-          maxNativeZoom={2}
-          maxBounds ={[[-90,-180],   [90,180]] }
+          minZoom={1.5}
+          maxBounds ={[[-90,-180],[90,180]]}
           maxBoundsViscosity = {true}>
+          
         <TileLayer
-
+          
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
