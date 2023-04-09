@@ -2,47 +2,57 @@ from transformations import marker_color, returnCoordinate
 from commit_database import * 
 from scrapers import *
 
-#bjj
-location_ibjjf = scrape_ibjjf_events()
-location_adcc = scrape_adcc_events()
+from airflow.decorators import dag, task
+from datetime import datetime, timedelta
 
-ibjjf_location_cord = returnCoordinate(location_ibjjf)
-adcc_location_cord = returnCoordinate(location_adcc)
+default_args ={
+    'owner': 'noahk',
+    'retries':2,
+    'retry_delay': timedelta(minutes=10)
+}
 
-#judo
-location_usajudo_events =scrape_usajudo_events()
-judo_location_cord = returnCoordinate(location_usajudo_events)
+@dag(
+    dag_id='dag_fighting_scraper',
+    default_args= default_args,
+    start_date = datetime(2023,4,20,4),
+    schedule_interval = '0 0 4 */14 * ? *' # every 14 days at 4 am 
+)
+def scrape_and_upload():
 
-# mma
-location_one = scrape_one_events()
-location_bellator = scrape_bellator_events()
-location_ufc = scrape_ufc_events()
+    @task()
+    def upload_mma():
+        scrape_mma = scrape_one_events() +scrape_bellator_events() +scrape_ufc_events()
+        mma_cords = returnCoordinate(scrape_mma)
 
-one_location_cord = returnCoordinate(location_one)
-bellator_location_cord = returnCoordinate(location_bellator)
-ufc_location_cord = returnCoordinate(location_ufc)
+    @task()
+    def upload_bjj():
+        scrape_bjj = scrape_ibjjf_events() + scrape_adcc_events()
+        bjj_cords = returnCoordinate(scrape_bjj)
 
-#boxing
-location_wbc = scrape_wbc_events()
-location_wba = scrape_wba_events()
-location_ibf = scrape_ibf_events()
-location_wbo = scrape_wbo_events()
+    @task()
+    def upload_judo():
+        scrape_judo = scrape_usajudo_events
+        judo_cords = returnCoordinate(scrape_judo)
 
-wbc_location_cord = returnCoordinate(location_wbc)
-wba_location_cord = returnCoordinate(location_wba)
-ibf_location_cord = returnCoordinate(location_ibf)
-wbo_location_cord = returnCoordinate(location_wbo)
+    @task()
+    def upload_boxing():
+        scrape_boxing =scrape_wbc_events() +scrape_wba_events() + scrape_ibf_events() + scrape_wbo_events()
+        return returnCoordinate(scrape_boxing)
 
-total_ufc = one_location_cord  + bellator_location_cord + ufc_location_cord 
-total_boxing = wbc_location_cord +wba_location_cord +ibf_location_cord + wbo_location_cord
-total_bjj = ibjjf_location_cord + adcc_location_cord
-total_judo = judo_location_cord
-total_events = total_bjj + total_judo + total_ufc + total_boxing 
-total_events_sorted = sorted(total_events, key = lambda event:event["Date"])
-total_events_color = marker_color(total_events_sorted)
 
-commit_database(total_events_color)
+    @task
+    def upload_events(mma, bjj, judo, boxing):
+        total_events = mma + bjj + judo +boxing
+        total_events_sorted = sorted(total_events, key = lambda event:event["Date"])
+        total_events_color = marker_color(total_events_sorted)
+        commit_database(total_events_color)
+    mma = upload_mma()
+    bjj = upload_bjj()
+    judo = upload_judo()
+    boxing = upload_boxing()
+    upload_events(mma = mma, bjj= bjj, judo = judo, boxing= boxing)
 
+scrape_fighting_events = scrape_and_upload()
 #muay thai, Broken
 # location_tf = scrape_tf_events()
 # location_mmt = scrape_mmt_events()

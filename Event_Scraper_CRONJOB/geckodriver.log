@@ -1471,3 +1471,49 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 DevTools listening on ws://127.0.0.1:34359/devtools/browser/52905f0b-6782-4458-bb76-e0c064d99680
 console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.ibf-usba-boxing.com."
 1680375521061	Marionette	INFO	Stopped listening on port 36149
+1681072338025	geckodriver	INFO	Listening on 127.0.0.1:56183
+1681072338587	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "53617" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile2dKZrV"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1681072339070	Marionette	INFO	Marionette enabled
+1681072339074	Marionette	INFO	Listening on port 44847
+Read port: 44847
+WebDriver BiDi listening on ws://127.0.0.1:53617
+1681072339217	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile2dKZrV/search.json.mozlz4", (void 0)))
+1681072341561	Marionette	INFO	Stopped listening on port 44847
+1681072341626	CDP	WARN	Failed to remove undefined (Could not parse path (undefined): NS_ERROR_FILE_UNRECOGNIZED_PATH)
+console.warn: services.settings: main/query-stripping sync interrupted by shutdown
+1681072386569	geckodriver	INFO	Listening on 127.0.0.1:49679
+1681072387114	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "59891" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileAr0aD5"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1681072387611	Marionette	INFO	Marionette enabled
+1681072387614	Marionette	INFO	Listening on port 33143
+Read port: 33143
+WebDriver BiDi listening on ws://127.0.0.1:59891
+1681072387727	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileAr0aD5/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:59891/devtools/browser/5578b81f-432c-4c22-bd54-4ca7147d4583
+JavaScript warning: https://pagead2.googlesyndication.com/bg/eGrdt-GuiAstYDBBFPRlHe36qu4ukgnY6P6eKjFBaNs.js line 2 > eval line 2908 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1681072393362	Marionette	INFO	Stopped listening on port 33143
+JavaScript error: resource://services-settings/Utils.jsm, line 240: TypeError: NetworkError: Network request failed
+1681072475157	geckodriver	INFO	Listening on 127.0.0.1:43607
+1681072475702	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "40791" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileiwfCej"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1681072476188	Marionette	INFO	Marionette enabled
+1681072476191	Marionette	INFO	Listening on port 33749
+Read port: 33749
+WebDriver BiDi listening on ws://127.0.0.1:40791
+1681072476355	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileiwfCej/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:40791/devtools/browser/7d05a2f0-39ee-4cd7-a02a-6d78ddc08a02
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.ibf-usba-boxing.com."
+1681072480681	Marionette	INFO	Stopped listening on port 33749
