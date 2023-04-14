@@ -25,7 +25,7 @@ def scrape_and_upload():
 
     @task()
     def upload_judo():
-        scrape_judo = scrape_usajudo_events()
+        scrape_judo = scrape_ijf_events()
         return scrape_judo
 
     @task()
