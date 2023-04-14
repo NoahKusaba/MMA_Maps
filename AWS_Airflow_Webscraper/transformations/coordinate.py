@@ -9,8 +9,8 @@ def returnCoordinate(name):
             event.update({"Coordinates":[13.8757,100.66738]})  # exception handeling for Lumpinee Boxing Stadium
         elif event["City"] == "Barueri":
             event.update({"Coordinates":[-23.5070384,-46.8679179]}) 
-
-
+        elif 'CANCELLED' in [ event['City'], event['Country'] ]:
+            pass
 
         else: 
             if event["City"] == "Wein":

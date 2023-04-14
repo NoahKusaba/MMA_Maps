@@ -1,12 +1,25 @@
 import datetime
 from scrapers.models import handle_URL, valid_date
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
+
+from selenium.webdriver.chrome.options import Options
+options = Options()
+options.add_argument("--headless")
+options.add_argument("window-size=1400,1500")
+options.add_argument("--disable-gpu")
+options.add_argument("--no-sandbox")
+options.add_argument("start-maximized")
+options.add_argument("enable-automation")
+options.add_argument("--disable-infobars")
+options.add_argument("--disable-dev-shm-usage")
+
 type = "bjj"
 
 def scrape_ibjjf_events():
     url = "https://ibjjf.com/events/calendar"
-    driver = webdriver.Firefox()
+    driver = webdriver.Chrome(ChromeDriverManager().install(),options=options)
     driver.get(url)
     click_submit = driver.find_element(By.CLASS_NAME,"search-results-action")
     fight_cards = driver.find_elements(By.XPATH,"//div[@class='col-12 event-row']")

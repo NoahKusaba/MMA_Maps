@@ -1,8 +1,20 @@
 import datetime
 from scrapers.models import handle_URL, valid_date
+
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 
+from selenium.webdriver.chrome.options import Options
+options = Options()
+options.add_argument("--headless")
+options.add_argument("window-size=1400,1500")
+options.add_argument("--disable-gpu")
+options.add_argument("--no-sandbox")
+options.add_argument("start-maximized")
+options.add_argument("enable-automation")
+options.add_argument("--disable-infobars")
+options.add_argument("--disable-dev-shm-usage")
 type = "boxing"
 
 def scrape_wbc_events():
@@ -63,7 +75,7 @@ def scrape_wba_events():
     return list_events
             
 def scrape_ibf_events():
-    driver = webdriver.Firefox()
+    driver =  webdriver.Chrome(ChromeDriverManager().install(),options=options)
     driver.get("https://www.ibf-usba-boxing.com/index.php/schedule?view=matchs")
     click_submit  = driver.find_element(By.CLASS_NAME,"btn").click()
     fight_cards = driver.find_elements(By.XPATH,'//article/div[@class="row"]')

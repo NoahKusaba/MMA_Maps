@@ -1,6 +1,6 @@
 sudo apt-get update
 sudo apt install python3-pip
 sudo pip install apache-airflow
-sudo  pip install colour
+sudo pip install colour
 sudo pip install selenium
 sudo pip install bs4
