@@ -44,7 +44,7 @@ function App()   {
         {total_types.map((event_name,idx) => {
           return(
             <div className = "checkbox" key={idx}>
-              {event_name}
+              {event_name.toUpperCase()}
               <input type="checkbox" value ={event_name} checked={event_types.includes(event_name)} onChange={() => handleChange(event_name)} /> 
             </div>
           )
