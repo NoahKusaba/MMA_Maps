@@ -4,3 +4,4 @@ sudo pip install apache-airflow
 sudo pip install colour
 sudo pip install selenium
 sudo pip install bs4
+sudo pip install -U googlemaps
