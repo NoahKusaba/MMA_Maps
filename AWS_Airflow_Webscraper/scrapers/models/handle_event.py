@@ -29,7 +29,7 @@ def handle_URL(url,event_name):
     if response.status_code !=200:
         print(response)
         print(response.content)
-        print(response.status_code,'Hello there')
+        print(response.status_code)
         print(f"Error Fetching {event_name}")
         exit()
     else:

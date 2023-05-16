@@ -1,8 +1,17 @@
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import './map.css';
+import { MapContainer, TileLayer, Marker, Popup, useMap, ZoomControl} from 'react-leaflet';
+import './map.css'; 
+import React, {useEffect} from "react";
+
+const SetFocusMap = ({focus_map}) =>{
+  const map = useMap()
+  
+  useEffect(()=>{
+    map.setView(focus_map, map.getZoom(20))
+  }, [focus_map])
+}
+function Map({event_data, focus_map}) {
 
 
-function Map({event_data}) {
 
   return (
     <div id="locations_map">
@@ -15,9 +24,10 @@ function Map({event_data}) {
           minZoom={1.5}
           maxBounds ={[[-90,-180],[90,180]]}
           maxBoundsViscosity = {true}>
-          
+        <SetFocusMap focus_map = {focus_map}/>
+
         <TileLayer
-          
+         
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
@@ -26,7 +36,9 @@ function Map({event_data}) {
 
             <Marker position={[event.latitude, event.longitude]} key ={idx} >
             <Popup>
-              {event.headline} <br /> {event.date.split(" ")[0]}     
+              <div className ='Center'>
+                <div>{event.headline} </div> <div>{event.date.split(" ")[0]}  </div>
+              </div>
             </Popup>
           </Marker>
           )
@@ -36,5 +48,6 @@ function Map({event_data}) {
     </div>
   );
 };
+
 
 export default Map;

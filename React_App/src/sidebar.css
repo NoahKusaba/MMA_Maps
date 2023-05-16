@@ -70,3 +70,13 @@ img{
 .ibjjf{
     content:url("./images/ibjjf.jpg")
 }
+.mapIcon:hover{
+    filter: brightness(130%);
+}
+
+.mapIcon{
+    content:url(./images/map.svg);
+    cursor:pointer;
+    width: 40%;
+    height:40%
+}

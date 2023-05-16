@@ -5,6 +5,8 @@ import './app.css';
 
 function App()   {
   const [event_data, setEvents] = useState(false);
+  const [focus_map, setFocusMap] = useState([0,0]);
+  // const focus_map = [0,0]
   const [event_types,setTypes] = useState(['mma']);
   const total_types = ["mma", "boxing","judo","bjj"]
 
@@ -38,8 +40,8 @@ function App()   {
 
   return(
   <div id="sidebar_map">
-      <Sidebar event_data = {event_data}/>
-      <Map event_data = {event_data} />
+      <Sidebar event_data = {event_data} setFocusMap ={setFocusMap}  />
+      <Map event_data = {event_data} focus_map = {focus_map}  />
       <div id="header">
         {total_types.map((event_name,idx) => {
           return(
