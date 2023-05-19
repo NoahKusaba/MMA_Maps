@@ -22,7 +22,7 @@ def scrape_bellator_events():
             venue = elements[2].string
             city = elements[3].string.split(", ")[0]
             country = elements[3].string.split(", ")[1]
-            list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object,"URL":url,"Org":"Bellator", "Type":type})
+            list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object.strftime('%Y-%m-%d'),"URL":url,"Org":"Bellator", "Type":type})
         else:
             pass
     return list_events
@@ -49,7 +49,7 @@ def scrape_ufc_events():
                 pass
             country = fight_card.find(class_="country").string
             url = "https://www.ufc.com" + str(fight_card.find(class_="c-card-event--result__headline").find("a")["href"])
-            list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object,"URL":url,"Org":"UFC", "Type":type})
+            list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object.strftime('%Y-%m-%d'),"URL":url,"Org":"UFC", "Type":type})
 
         else:
             pass
@@ -84,7 +84,7 @@ def scrape_one_events():
                 headline = event_soup.find(class_="versus").string[1:-1]
                 venue = elements.find(class_="event-location").string.split(", ")[0]
                 city = elements.find(class_="event-location").string.split(", ")[1]
-                list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object,"URL":url,"Org":"ONE", "Type":type})
+                list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object.strftime('%Y-%m-%d'),"URL":url,"Org":"ONE", "Type":type})
             except AttributeError:
                 pass
         else:

@@ -15,13 +15,14 @@ def scrape_ijf_events():
         else: 
             month = fight_card.find(class_='calendar-date--short__month').string
             days = fight_card.find(class_='calendar-date--short__days').string
+            
             if '-' in days:
                 date_object = datetime.strptime(month+ " "+days.split(' - ')[0] +" "+str(year),'%B %d %Y')
-                date_object = datetime.strptime(month+ " "+days.split(' - ')[1] +" "+str(year),'%B %d %Y')
+                end_date_object = datetime.strptime(month+ " "+days.split(' - ')[1] +" "+str(year),'%B %d %Y')
             else:
                 date_object = datetime.strptime(month+ " "+days +" "+str(year),'%B %d %Y')
                 end_date_object = 0
-           
+
             if valid_date(date_object, end_date_object):
                 headline = fight_card.find(class_="event-link-title").string.strip()
                 event_name = headline
@@ -33,5 +34,3 @@ def scrape_ijf_events():
                 list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object.strftime('%Y-%m-%d'),"URL":url,"Org":org, "Type":type}) 
             else:
                 pass
-
-    return list_events

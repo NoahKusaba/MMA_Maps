@@ -1,7 +1,7 @@
 from transformations import marker_color, returnCoordinate
 from commit_database import * 
 from scrapers import *
-
+from datetime import datetime
 from airflow.decorators import dag, task
 import pendulum
 
@@ -30,7 +30,7 @@ def scrape_and_upload():
 
     @task()
     def upload_boxing():
-        scrape_boxing =scrape_wbc_events() +scrape_wba_events() + scrape_ibf_events() + scrape_wbo_events()
+        scrape_boxing =scrape_wbc_events() +scrape_wba_events() + scrape_wbo_events() # + scrape_ibf_events() 
         return scrape_boxing
 
     @task()
@@ -40,7 +40,7 @@ def scrape_and_upload():
     
     @task()
     def upload_events(total_events):
-        total_events_sorted = sorted(total_events, key = lambda event:event["Date"])
+        total_events_sorted = sorted(total_events, key = lambda event:datetime.strptime(event["Date"],'%Y-%m-%d'))
         total_events_color = marker_color(total_events_sorted)
         commit_database(total_events_color)
         

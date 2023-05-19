@@ -17,6 +17,7 @@ options.add_argument("--disable-dev-shm-usage")
 
 type = "bjj"
 
+
 def scrape_ibjjf_events():
     url = "https://ibjjf.com/events/calendar"
     driver = webdriver.Chrome(ChromeDriverManager().install(),options=options)
@@ -45,7 +46,7 @@ def scrape_ibjjf_events():
             city = data[2].split(', ')[-1]
             country = ""
             org = 'ibjjf'
-            list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object,"URL":url,"Org":org, "Type":type})
+            list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object.strftime('%Y-%m-%d'),"URL":url,"Org":org, "Type":type})
         else:
             pass
     driver.quit()
@@ -68,7 +69,7 @@ def scrape_adcc_events():
             city = location[-1].split(",\n")[0]
             venue = location[0]
             url = fight_card.find(class_="entry-title").a["href"]
-            list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object,"URL":url,"Org":org, "Type":type})
+            list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object.strftime('%Y-%m-%d'),"URL":url,"Org":org, "Type":type})
         else:
             pass
     return list_events

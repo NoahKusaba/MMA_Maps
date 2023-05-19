@@ -38,7 +38,7 @@ def scrape_wbc_events():
             venue =""
             url = fight_card.find(class_="tribe-event-url")["href"]
             org = "WBC"
-            list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object,"URL":url,"Org":org, "Type":type})
+            list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object.strftime('%Y-%m-%d'),"URL":url,"Org":org, "Type":type})
 
         else:
             pass
@@ -69,20 +69,20 @@ def scrape_wba_events():
                 country =location
             org = "WBA"
             
-            list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object,"URL":url,"Org":org, "Type":type})
+            list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object.strftime('%Y-%m-%d'),"URL":url,"Org":org, "Type":type})
         else:
             pass
     return list_events
             
 def scrape_ibf_events():
-    driver =  webdriver.Chrome(ChromeDriverManager().install(),options=options)
+    driver = webdriver.Chrome(ChromeDriverManager().install(),options=options)
     driver.get("https://www.ibf-usba-boxing.com/index.php/schedule?view=matchs")
     click_submit  = driver.find_element(By.CLASS_NAME,"btn").click()
     fight_cards = driver.find_elements(By.XPATH,'//article/div[@class="row"]')
     url = "https://www.ibf-usba-boxing.com/index.php/schedule?view=matchs"
     list_events = []
     for fight_card in fight_cards:
-        date = fight_card.find_element(By.XPATH,'.//strong').text[4::]
+        date = fight_card.find_element(By.XPATH,'./strong').text[4::]
         date_object = datetime.datetime.strptime(date,"%B %d, %Y")
         if valid_date(date_object):
             event_name = fight_card.find_element(By.XPATH,".//h4[@class='text-white text-uppercase']").text
@@ -107,7 +107,7 @@ def scrape_ibf_events():
                 # venue = location[-1]
             org = "IBF"
 
-            list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object,"URL":url,"Org":org, "Type":type}) 
+            list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object.strftime('%Y-%m-%d'),"URL":url,"Org":org, "Type":type}) 
         else:
             pass
     driver.quit()
@@ -136,7 +136,7 @@ def scrape_wbo_events():
             if city =="Venue TBD" and country == "Venue TBD":
                 pass
             else:
-                list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object,"URL":url,"Org":org, "Type":type}) 
+                list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object.strftime('%Y-%m-%d'),"URL":url,"Org":org, "Type":type}) 
         else:
             pass
     return list_events
