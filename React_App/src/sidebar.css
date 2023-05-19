@@ -18,6 +18,7 @@
 .imageCont{
     height:85%;
     width:30%;
+    display:flex;
 }
 img{
     width:100%;
