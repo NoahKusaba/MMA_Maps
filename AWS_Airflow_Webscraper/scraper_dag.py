@@ -4,6 +4,7 @@ from scrapers import *
 from datetime import datetime
 from airflow.decorators import dag, task
 import pendulum
+#This is pretty self explanitory 
 
 @dag(
     schedule = '@weekly',

@@ -3,6 +3,7 @@ import Map from './Map';
 import Sidebar from './Sidebar';
 import './app.css';
 
+// I am not a front-end developer. Fight Me. 
 function App()   {
   const [event_data, setEvents] = useState(false);
   const [focus_map, setFocusMap] = useState([0,0]);

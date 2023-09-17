@@ -5,6 +5,16 @@ from api.models import Events
 #enable cors for all use cases, probably temporary
 from flask_cors import CORS
 accepted_events = ["mma", "boxing","judo","bjj"]
+
+'''
+    - Rest API
+        - Outputs event data by sport.
+        - Can output multiple event types of seperated by "-"
+            - Valid Examples (Order doesn't matter):
+                - '/mma'
+                - '/mma-boxing'
+                - '/mma-boxing-judo'
+'''
 def create_api():
     app = Flask(__name__)
     CORS(app) 

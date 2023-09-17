@@ -2,6 +2,12 @@ import psycopg2
 from settings import db_name, password, user, hostname
 
 def commit_database(events,table = "events"):
+    """
+    events: 
+        - List of dictionaries containing event information to upload to DB
+    table: 
+        - String designating event-type to determine which table to upload to. 
+    """
     conn = psycopg2.connect(dbname = db_name, user = user, password = password, host=hostname, port= '5432')
     cursor = conn.cursor()
     cursor.execute(f"drop table if exists {table};")
@@ -18,7 +24,7 @@ def commit_database(events,table = "events"):
     Date VARCHAR(100),
     Latitude FLOAT(25),
     Longitude FLOAT(25),
-    Color VARCHAR(20), 
+    Color VARCHAR(20),  
     URL TEXT,
     Org VARCHAR(20),
     TYPE VARCHAR(20)

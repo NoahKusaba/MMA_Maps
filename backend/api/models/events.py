@@ -1,6 +1,6 @@
 class Events():
     __table__ ='events'
-    columns = ["event", "headline", "venue","date", "latitude", "longitude", "color", "url", "org"]
+    columns = ["event", "headline", "venue","date", "latitude", "longitude", "color", "url", "org"] 
     def __init__(self,**kwargs) -> None:
 
         for key in kwargs.keys():
