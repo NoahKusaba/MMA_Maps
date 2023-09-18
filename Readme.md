@@ -2,6 +2,8 @@
 MMA is a growing sport, and the scheduling/advertising is handleded poorly! 
 MMA Maps serves as the go to hub for the average fight lover to keep up with the BIG FIGHTS happening around the world for JUST the mnajor organizations. Includes a sidebar with upcoming events along with a map featuring markers of where the fights are occuring in the world!
 
+![alt text](MMA_Website_Pictures.png)
+
 First major project I undertook to demonstrate understanding of the modern computer stack. 
 Currently discontinued due to cost.
 

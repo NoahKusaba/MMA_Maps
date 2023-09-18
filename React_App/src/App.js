@@ -27,7 +27,6 @@ function App()   {
 
 
   const get_db = () => {
-
     fetch('https://fighting-events-api.onrender.com/' + event_types.join('-'))
         .then(response => { 
 
