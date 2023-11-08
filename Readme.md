@@ -4,7 +4,6 @@ MMA Maps serves as the go-to hub for the average fight lover to keep up with the
 
 ![alt text](MMA_Website_Pictures.png)
 
-First major project I undertook to demonstrate understanding of the modern computer stack. 
 Currently discontinued due to cost.
 
 # AWS_Airflow_Webscraper
