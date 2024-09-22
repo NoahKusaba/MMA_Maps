@@ -29,9 +29,10 @@ def create_api():
             for index in type.split('-'):
                 if index in accepted_events: 
                     stringInsert = str(index)
-                    insertType += ' Type = ' +f"'{stringInsert}'" +" or"
+                    insertType += f" Type = '{stringInsert}' or"
+
             insertType= insertType[0:-2]
-        elif type in accepted_events: insertType = ' Type = ' + f"'{type}'"
+        elif type in accepted_events: insertType = f" Type = '{type}'"
         else: raise KeyError("Incorrect Query")
         
         conn = psycopg2.connect(dbname = db_name, user = user, password = password, host = host)
