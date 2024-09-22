@@ -1,11 +1,10 @@
 import datetime
 from scrapers.models import handle_URL, valid_date
-
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
-
 from selenium.webdriver.chrome.options import Options
+
 options = Options()
 options.add_argument("--headless")
 options.add_argument("window-size=1400,1500")
@@ -39,10 +38,6 @@ def scrape_wbc_events():
             url = fight_card.find(class_="tribe-event-url")["href"]
             org = "WBC"
             list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object.strftime('%Y-%m-%d'),"URL":url,"Org":org, "Type":type})
-
-        else:
-            pass
-
     return list_events
 
 def scrape_wba_events():
@@ -68,10 +63,7 @@ def scrape_wba_events():
                 city = ""
                 country =location
             org = "WBA"
-            
             list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object.strftime('%Y-%m-%d'),"URL":url,"Org":org, "Type":type})
-        else:
-            pass
     return list_events
             
 def scrape_ibf_events():
@@ -86,30 +78,23 @@ def scrape_ibf_events():
         date_object = datetime.datetime.strptime(date,"%B %d, %Y")
         if valid_date(date_object):
             event_name = fight_card.find_element(By.XPATH,".//h4[@class='text-white text-uppercase']").text
-
             fighter_1= fight_card.find_elements(By.XPATH,".//h3/a")[0].text.replace("\n"," ")
             fighter_2 = fight_card.find_elements(By.XPATH,".//h3/a")[-1].text.replace("\n"," ")
             headline = fighter_1 +" vs "+fighter_2
-
             location = fight_card.find_element(By.XPATH,".//div/p").text.split(", ")
             if len(location) == 3:
                 city = location[1][5::]
-
                 country = location[2].split("\n")[0]
                 # venue= location[2].split("\n")[1] Gives promotion name and corrupts coordinate
                 venue = ""
             else:
                 location = fight_card.find_element(By.XPATH,".//div/p").text.split("\n")
-                
                 country = location[1]
                 city = ""
                 venue = ""
                 # venue = location[-1]
             org = "IBF"
-
             list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object.strftime('%Y-%m-%d'),"URL":url,"Org":org, "Type":type}) 
-        else:
-            pass
     driver.quit()
     return list_events
 
@@ -133,10 +118,5 @@ def scrape_wbo_events():
             location = fight_card.find(class_="card-footer").find(class_="text-muted").string.split(", ")
             city = location[0]
             country = location[-1]
-            if city =="Venue TBD" and country == "Venue TBD":
-                pass
-            else:
-                list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object.strftime('%Y-%m-%d'),"URL":url,"Org":org, "Type":type}) 
-        else:
-            pass
+            if city !="Venue TBD" and country != "Venue TBD": list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object.strftime('%Y-%m-%d'),"URL":url,"Org":org, "Type":type})  
     return list_events

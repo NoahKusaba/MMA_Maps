@@ -1,7 +1,6 @@
 from datetime import datetime
 from scrapers.models import handle_URL, valid_date
-type = "judo"
-org = "judo" # not realistic to get unique pictures for event
+type = org = "judo"
 year = datetime.now().year
 def scrape_ijf_events():
     main_url = "https://www.ijf.org/calendar?year=2023&month=&age=world_tour&type=comp"
@@ -9,10 +8,8 @@ def scrape_ijf_events():
     fight_cards = soup.find_all('tr')
     list_events = []
     for fight_card in fight_cards:
-        if fight_card.attrs['class']:
-            #pass if hidden row
-            pass
-        else: 
+        #pass if hidden row
+        if not fight_card.attrs['class']:
             month = fight_card.find(class_='calendar-date--short__month').string
             days = fight_card.find(class_='calendar-date--short__days').string
             
@@ -32,5 +29,3 @@ def scrape_ijf_events():
                 city = location[1]
                 country = location[0]
                 list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object.strftime('%Y-%m-%d'),"URL":url,"Org":org, "Type":type}) 
-            else:
-                pass

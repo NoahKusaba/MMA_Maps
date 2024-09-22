@@ -20,11 +20,9 @@ function App()   {
     };
   };
 
-    
   useEffect(()=> {
       get_db();
   }, [event_types]);
-
 
   const get_db = () => {
     fetch('https://fighting-events-api.onrender.com/' + event_types.join('-'))

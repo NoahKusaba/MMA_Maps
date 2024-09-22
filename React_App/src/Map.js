@@ -49,5 +49,4 @@ function Map({event_data, focus_map}) {
   );
 };
 
-
 export default Map;

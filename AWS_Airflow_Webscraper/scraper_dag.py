@@ -66,6 +66,7 @@ scrape_fighting_events = scrape_and_upload()
 # mmt_location_cord = returnCoordinate(location_mmt)
 # lf_location_cord = returnCoordinate(location_lf)
 
+######################################################################
 # Folium map for those interested 
 # import folium 
 # import webbrowser

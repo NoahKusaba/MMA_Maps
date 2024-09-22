@@ -23,14 +23,11 @@ def scrape_bellator_events():
             city = elements[3].string.split(", ")[0]
             country = elements[3].string.split(", ")[1]
             list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object.strftime('%Y-%m-%d'),"URL":url,"Org":"Bellator", "Type":type})
-        else:
-            pass
     return list_events
 
 
 def scrape_ufc_events():
     soup = handle_URL("https://www.ufc.com/events#events-list-upcoming","UFC")
-
     fight_cards = soup.find_all(class_="l-listing__item")
     list_events = []
     
@@ -45,22 +42,16 @@ def scrape_ufc_events():
             venue = fight_card.find("h5").string.strip()
             try:
                 city = fight_card.find(class_="locality").string
-            except AttributeError:
-                pass
+            except AttributeError: pass
             country = fight_card.find(class_="country").string
             url = "https://www.ufc.com" + str(fight_card.find(class_="c-card-event--result__headline").find("a")["href"])
             list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object.strftime('%Y-%m-%d'),"URL":url,"Org":"UFC", "Type":type})
-
-        else:
-            pass
 
     return list_events
 
 def scrape_one_events():
     soup = handle_URL("https://www.onefc.com/events/#upcoming","ONE")
-
     fight_cards = soup.find(id="upcoming-events-section").find_all(class_="simple-post-card")
-
     list_events = []
     #{"Event":, "Venue":, "City":,"Country":,"Date":,"URL":,"Headline"}
     for fight_card in fight_cards:
@@ -69,7 +60,6 @@ def scrape_one_events():
         event_response = requests.get(url)
         event_soup = BeautifulSoup(event_response.content, "html.parser")
         elements = event_soup.find(class_="info-content")
-
         date = (elements.find(class_="day").string + elements.find_all(class_="time")[1].string).split(" ")
         date = date[0] + " " + date[1] +" 2023"
         date_object = datetime.datetime.strptime(date,"%b %d %Y")
@@ -85,10 +75,6 @@ def scrape_one_events():
                 venue = elements.find(class_="event-location").string.split(", ")[0]
                 city = elements.find(class_="event-location").string.split(", ")[1]
                 list_events.append({"Event":event_name, "Headline":headline, "Venue":venue, "City":city,"Country":country,"Date":date_object.strftime('%Y-%m-%d'),"URL":url,"Org":"ONE", "Type":type})
-            except AttributeError:
-                pass
-        else:
-            pass
-
+            except AttributeError: pass
     return list_events
     
